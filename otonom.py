@@ -23,18 +23,18 @@ def set_rc_channel_pwm(master, channel_id, pwm=1500):
 
 def main():
     # for debugging
-    with open("/home/pi/ok.txt", "w+") as file:
+    with open("ok.txt", "w+") as file:
         file.write("TUNAPRO1234")
 
     while not os.path.exists("/dev/ttyACM0"): 
-        with open("/home/pi/log.txt", "w+") as file:
-            file.write("Waiting for device...")
+        with open("log.txt", "w+") as file:
+            file.write("Waiting for device...\n")
         time.sleep(5)
 
     master = mavutil.mavlink_connection("/dev/ttyACM0", baud=baudrate)
 
-    with open("/home/pi/log.txt", "w+") as file:
-        file.write("Device connected.")
+    with open("log.txt", "w+") as file:
+        file.write("Device connected.\n")
     
     delay = 3
     commands = [
