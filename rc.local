@@ -18,5 +18,5 @@ if [ "$_IP" ]; then
 fi
 
 . /home/pi/companion/.companion.rc
-python2 /home/pi/mavlink-vision/otonom.py
+python2 /home/pi/eva2020sub/otonom.py
 exit 0
